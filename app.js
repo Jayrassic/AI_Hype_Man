@@ -3,6 +3,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
+import "dotenv/config";
+import cors from "cors";
 
 // get the resolved path to the file
 const __filename = fileURLToPath(import.meta.url);
@@ -12,6 +14,9 @@ const __dirname = path.dirname(__filename);
 import router from "./routes/index.js";
 
 const app = express();
+
+app.use(cors());
+app.use(express.json());
 
 app.use(logger("dev"));
 app.use(express.json());
