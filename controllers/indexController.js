@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 
-const openai = new OpenAI({ api_key: process.env.API_KEY, max_tokens: 100 });
+const openai = new OpenAI();
 
 async function main(message) {
   const completion = await openai.chat.completions.create({
@@ -12,7 +12,6 @@ async function main(message) {
       message,
     ],
     model: "ft:gpt-3.5-turbo-0125:personal::9PYN3bwi",
-    max_tokens: 200,
   });
   return completion.choices[0].message;
 }
