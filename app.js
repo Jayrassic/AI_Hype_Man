@@ -18,8 +18,9 @@ const app = express();
 var whitelist = [
   "http://localhost:5173",
   "http://localhost:4173",
-  "https://jasongaglio.com/",
-  "https://www.jasongaglio.com/",
+  "https://jasongaglio.com",
+  "https://www.jasongaglio.com",
+  "https://jgport.netlify.app",
 ];
 
 var corsOptions = {
