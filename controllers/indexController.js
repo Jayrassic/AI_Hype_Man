@@ -24,17 +24,16 @@ const AI = [
   body("message.content").isString().trim().escape(),
 
   async function AI(req, res, next) {
-    console.log(req.body);
-
     const errors = validationResult(req);
     const message = req.body.message;
+    console.log(message);
 
     if (!errors.isEmpty()) {
-      console.log(errors);
       res.status(400).send({ error: { message: "Form Validation Failure" } });
     } else {
       try {
         const answer = await main(message);
+        console.log(answer);
         res.status(200).send(answer);
       } catch (err) {
         console.log(err);
