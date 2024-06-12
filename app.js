@@ -15,13 +15,7 @@ import router from "./routes/index.js";
 
 const app = express();
 
-const whitelist = [
-  "http://localhost:5173",
-  "http://localhost:4173",
-  "https://jasongaglio.com",
-  "https://www.jasongaglio.com",
-  "https://jgport.netlify.app",
-];
+const whitelist = process.env.WHITELIST;
 
 const corsOptions = {
   origin: function (origin, callback) {
